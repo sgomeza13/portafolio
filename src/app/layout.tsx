@@ -15,7 +15,6 @@ export const metadata: Metadata = {
     siteName: 'Simón Gómez Arango Portfolio',
     type: 'website',
   },
-  themeColor: '#05090D',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
