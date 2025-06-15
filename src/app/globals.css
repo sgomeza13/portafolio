@@ -36,6 +36,13 @@
   --gray-700: #3f3f46;
   --gray-900: #18181b;
 
+    /* Semi-transparent glass colors */
+  --white-glass: rgba(255, 255, 255, 0.08);
+  --berry-glass: rgba(89, 25, 72, 0.3);       /* more color, more depth */
+  --emerald-glass: rgba(58, 118, 101, 0.25);
+  --error-glass: rgba(198, 76, 76, 0.25);
+  --cocoa-glass: rgba(89, 64, 54, 0.25);       /* dark brown feel */
+
 
   /* Typography */
   --font-heading: 'Playfair Display', serif;

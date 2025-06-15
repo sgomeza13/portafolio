@@ -1,7 +1,7 @@
 "use client"
 import { useEffect, useState, ReactNode } from 'react';
 import { motion } from 'framer-motion';
-import { getTextContent } from '@/app/hooks/useGetTextContentHook';
+import { getTextContent } from '@/hooks/useGetTextContentHook';
 
 interface TypewriterTextProps {
   children: ReactNode;
