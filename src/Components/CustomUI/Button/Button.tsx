@@ -1,6 +1,7 @@
 import { cn } from '@/lib/util';
 import React from 'react';
 import { baseClasses, buttonColors, buttonStyles, buttonVariants } from './Styles';
+import { BounceLoader } from 'react-spinners';
 
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -41,32 +42,14 @@ export function Button({
   return (
     <button
       type="button"
+      aria-label='button'
       aria-disabled={disabled || loading}
       className={buttonClasses}
       disabled={disabled || loading}
       {...props}
     >
       {loading && (
-        <svg
-          className="mr-2 h-4 w-4 animate-spin"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-        >
-          <circle
-            className="opacity-25"
-            cx="12"
-            cy="12"
-            r="10"
-            stroke="currentColor"
-            strokeWidth="4"
-          />
-          <path
-            className="opacity-75"
-            fill="currentColor"
-            d="M4 12a8 8 0 018-8V0C5.37 0 0 5.37 0 12h4zm2 5.29A8 8 0 014 12H0c0 3.04 1.13 5.82 3 7.94l3-2.65z"
-          />
-        </svg>
+        <BounceLoader color="white" size={20}  className='mr-2'/>
       )}
       {leftIcon && !loading && <span className="mr-2">{leftIcon}</span>}
       {children}

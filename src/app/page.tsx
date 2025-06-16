@@ -16,11 +16,11 @@ export default function Home() {
             </p>
           </TypewriterText>
           <div className="flex justify-center gap-4">
-            <Button color="default" styleType="solid">Hire Me</Button>
+            <Button color="default" loading styleType="solid">Hire Me</Button>
             <Button color="default" styleType="outline">Contact Me</Button>
             <Button color="success" styleType="solid">Download CV</Button>
           </div>
-          <Button color="success_glass" loading styleType="solid">Success Glass</Button>
+          <Button color="success_glass" styleType="solid">Success Glass</Button>
           <Button color="error" styleType="outline">Delete</Button>
           <Button color="default" styleType="ghost">Ghost Action</Button>
           <Button color="secondary" styleType="solid">Classic</Button>
