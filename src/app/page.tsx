@@ -1,4 +1,5 @@
-import TypewriterText from "./Components/TypeWritterEffect/TypeWritterText";
+import { Button } from "@/Components/CustomUI/Button/Button";
+import TypewriterText from "@/Components/TypeWritterEffect/TypeWritterText";
 
 export default function Home() {
   return (
@@ -14,6 +15,16 @@ export default function Home() {
             clean code, rich design, and a touch of nature.
             </p>
           </TypewriterText>
+          <div className="flex justify-center gap-4">
+            <Button color="default" loading styleType="solid">Hire Me</Button>
+            <Button color="default" styleType="outline">Contact Me</Button>
+            <Button color="success" styleType="solid">Download CV</Button>
+          </div>
+          <Button color="success_glass" styleType="solid">Success Glass</Button>
+          <Button color="error" styleType="outline">Delete</Button>
+          <Button color="default" styleType="ghost">Ghost Action</Button>
+          <Button color="secondary" styleType="solid">Classic</Button>
+          <Button color="neutral" styleType="link">Read More</Button>
       </div>
     </section>
   );
