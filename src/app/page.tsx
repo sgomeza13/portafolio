@@ -28,7 +28,7 @@ export default function Home() {
             Download CV
           </Button>
         </div>
-        <Card className="bg-berry-500/20">
+        <Card className="bg-berry-500/20" >
           <CardHeader className="text-white">Hola vv que mas pues</CardHeader>
           <CardBody className="grid grid-cols-3 gap-4">
             <Button color="success_glass" styleType="solid">
@@ -50,7 +50,7 @@ export default function Home() {
               Read More
             </Button>
           </CardBody>
-          <CardFooter className="text-white">Footer</CardFooter>
+          <CardFooter className="text-white" hasBorder>Footer</CardFooter>
         </Card>
     </section>
   );
