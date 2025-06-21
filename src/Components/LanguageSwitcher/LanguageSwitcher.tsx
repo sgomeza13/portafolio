@@ -1,6 +1,7 @@
 "use client";
 
 import { Link, useRoute } from "next-globe-gen";
+import { Button } from "../CustomUI/Button/Button";
 
 /**
  * If there is dynamic route segments in some of the application routes (i.e. "/images/[id]"),
@@ -11,16 +12,20 @@ export default function LanguageSwitcher() {
   const route = useRoute();
   return (
     <nav>
-      <ul>
+      <ul className="flex flex-row gap-4">
         <li>
+          <Button>
           <Link href={route} locale="en">
-            Ingles
+            English 🇬🇧
           </Link>
+         </Button> 
         </li>
         <li>
+          <Button>
           <Link href={route} locale="es">
-            Español
+            Español 🇪🇸
           </Link>
+          </Button>
         </li>
       </ul>
     </nav>
