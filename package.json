@@ -12,6 +12,7 @@
     "clsx": "^2.1.1",
     "framer-motion": "^12.18.1",
     "next": "15.3.3",
+    "next-globe-gen": "^1.4.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-spinners": "^0.17.0",
