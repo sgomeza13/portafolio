@@ -1,8 +1,10 @@
 import { Button } from "@/Components/CustomUI/Button/Button";
 import { Card, CardBody, CardFooter, CardHeader } from "@/Components/CustomUI/Card/Card";
 import TypewriterText from "@/Components/TypeWritterEffect/TypeWritterText";
+import { useTranslations } from "next-globe-gen";
 
 export default function Home() {
+  const t = useTranslations("home");
   return (
     <section className="min-h-screen text-sand-400 px-6 py-24 flex flex-col items-center justify-center font-sans">
       <div className="max-w-3xl text-center space-y-8">
@@ -11,8 +13,7 @@ export default function Home() {
         </h1>
         <TypewriterText speed={60} className="py-10">
           <p className="text-lg sm:text-xl leading-relaxed">
-            Fullstack developer crafting modern web experiences with a love for
-            clean code, rich design, and a touch of nature.
+            {t("title")}
           </p>
         </TypewriterText>
         </div>
