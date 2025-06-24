@@ -1,58 +1,59 @@
 import { Button } from "@/Components/CustomUI/Button/Button";
-import { Card, CardBody, CardFooter, CardHeader } from "@/Components/CustomUI/Card/Card";
+import {
+  Card,
+  CardBody,
+  CardHeader,
+} from "@/Components/CustomUI/Card/Card";
+import TechStack from "@/Components/TechStack/TechStack";
 import TypewriterText from "@/Components/TypeWritterEffect/TypeWritterText";
 import { useTranslations } from "next-globe-gen";
+import { CiMail } from "react-icons/ci";
+import { FaEye } from "react-icons/fa";
 
 export default function Home() {
   const t = useTranslations("home");
+
   return (
-    <section className="min-h-screen text-sand-400 px-6 py-24 flex flex-col items-center justify-center font-sans">
-      <div className="max-w-3xl text-center space-y-8">
-        <h1 className="text-5xl sm:text-6xl font-bold text-berry-500 font-heading">
-          Simón Gómez Arango
-        </h1>
-        <TypewriterText speed={60} className="py-10">
-          <p className="text-lg sm:text-xl leading-relaxed">
-            {t("title")}
-          </p>
-        </TypewriterText>
+    <section className="h-screen flex items-center justify-center px-6">
+      <div className="w-full max-w-4xl mx-auto text-center space-y-8">
+        {/* Hero Section */}
+        <div className="space-y-6">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary-400 via-primary-500 to-accent-500 font-heading leading-tight">
+            Simón Gómez Arango
+          </h1>
+
+          <TypewriterText
+            speed={70}
+            className="pt-4 text-lg sm:text-xl lg:text-2xl leading-relaxed text-foreground-muted max-w-3xl mx-auto"
+          >
+            <h2 className="">{t("title")}</h2>
+          </TypewriterText>
         </div>
 
-        <div className="flex justify-center gap-4 py-10">
-          <Button color="default" loading styleType="solid">
-            Hire Me
+        <div className="flex flex-row gap-4 justify-center pt-6">
+          <Button color="success" rightIcon={<FaEye size={20} />}>
+            See Projects
           </Button>
-          <Button color="default" styleType="outline">
-            Contact Me
-          </Button>
-          <Button color="success" styleType="solid">
-            Download CV
+          <Button color="accent" rightIcon={<CiMail size={20} />}>
+            Contact me
           </Button>
         </div>
-        <Card className="bg-berry-500/20" >
-          <CardHeader className="text-white">Hola vv que mas pues</CardHeader>
-          <CardBody className="grid grid-cols-3 gap-4">
-            <Button color="success_glass" styleType="solid">
-              Success Glass
-            </Button>
-            <Button color="error" styleType="outline">
-              Delete
-            </Button>
-            <Button color="default" styleType="ghost">
-              Ghost Action
-            </Button>
-            <Button color="secondary" styleType="solid">
-              Classic
-            </Button>
-            <Button color="neutral" styleType="link">
-              Read More
-            </Button>
-            <Button color="default" styleType="solid">
-              Read More
-            </Button>
-          </CardBody>
-          <CardFooter className="text-white" hasBorder>Footer</CardFooter>
-        </Card>
+
+        {/* Tech Stack Card - Compact Version */}
+        <div className="">
+          <Card className="gradient-glass border-gray-800 hover:glow-primary transition-all duration-300 max-w-4xl mx-auto">
+            <CardHeader
+              hasBorder
+              className="text-primary-400 text-xl font-semibold pb-4"
+            >
+              {t("stack")}
+            </CardHeader>
+            <CardBody>
+              <TechStack />
+            </CardBody>
+          </Card>
+        </div>
+      </div>
     </section>
   );
 }

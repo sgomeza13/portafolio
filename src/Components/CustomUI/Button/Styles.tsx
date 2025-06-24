@@ -1,30 +1,34 @@
-// Color variants
+// Color Variants Aligned to Your Palette
 export const buttonColors = {
-  // Solid variants
-  default: 'text-white bg-berry-500 hover:bg-berry-600',
-  success: 'text-white bg-accent-emerald hover:bg-accent-emerald/80',
+  // Solid Variants
+  primary: 'text-white bg-primary-500 hover:bg-primary-600',
+  secondary: 'text-white bg-secondary-500 hover:bg-secondary-600',
+  accent: 'text-white bg-accent-500 hover:bg-accent-600',
+  success: 'text-white bg-success hover:bg-success/90',
   error: 'text-white bg-error hover:bg-error/90',
-  secondary: 'text-sand-400 bg-cocoa-700 hover:bg-cocoa-800',
-  neutral: 'text-foreground bg-white hover:bg-gray-100',
+  neutral: 'text-foreground bg-gray-800 hover:bg-gray-700',
 
-  // Glass variants (real glassmorphism)
-  default_glass: 'text-white bg-berry-500/40 backdrop-blur-md border border-white/10 hover:bg-berry-500/40',
-  success_glass: 'text-white bg-accent-emerald/30 backdrop-blur-md border border-white/10 hover:bg-accent-emerald/30',
+  // Glass Variants
+  primary_glass: 'text-white bg-primary-glass backdrop-blur-md border border-white/10 hover:bg-primary-glass',
+  secondary_glass: 'text-white bg-secondary-glass backdrop-blur-md border border-white/10 hover:bg-secondary-glass',
+  accent_glass: 'text-white bg-accent-glass backdrop-blur-md border border-white/10 hover:bg-accent-glass',
+  success_glass: 'text-white bg-success/30 backdrop-blur-md border border-white/10 hover:bg-success/30',
   error_glass: 'text-white bg-error/30 backdrop-blur-md border border-white/10 hover:bg-error/30',
-  secondary_glass: 'text-white bg-cocoa-700/30 backdrop-blur-md border border-white/10',
-  neutral_glass: 'text-white bg-white/20 backdrop-blur-md border border-white/10 hover:bg-white/20',
+  neutral_glass: 'text-white bg-glass-medium backdrop-blur-md border border-white/10 hover:bg-glass-strong',
+
+  // Optional Gradient CTA
+  cta_gradient: 'text-white bg-gradient-to-r from-primary-500 to-accent-500 hover:brightness-110',
 };
 
-
-
+// Button Style Variations
 export const buttonStyles = {
-  solid: '',
-  outline: 'border border-current bg-transparent',
-  ghost: 'bg-transparent hover:bg-white/10',
-  link: 'bg-transparent underline underline-offset-4 hover:text-accent-gold',
+  solid: '',  // Default solid via color keys
+  outline: 'border border-current bg-transparent hover:bg-glass-light',
+  ghost: 'bg-transparent hover:bg-glass-light',
+  link: 'bg-transparent underline underline-offset-4 hover:text-accent-500',
 };
 
-// Size and shape
+// Size and Shape Options
 export const buttonVariants = {
   size: {
     default: 'h-10 px-4 py-2 text-sm',
@@ -43,6 +47,6 @@ export const buttonVariants = {
   },
 };
 
-// Shared base styles
+// Base Button Classes
 export const baseClasses =
   'inline-flex items-center justify-center whitespace-nowrap font-medium ring-offset-white transition-all duration-150 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 cursor-pointer disabled:cursor-not-allowed hover:scale-[1.08] active:scale-[0.98] shadow-sm hover:shadow-md';

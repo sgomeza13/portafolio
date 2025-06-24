@@ -3,7 +3,6 @@ import React from 'react';
 import { baseClasses, buttonColors, buttonStyles, buttonVariants } from './Styles';
 import { BounceLoader } from 'react-spinners';
 
-
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   color?: keyof typeof buttonColors;
   styleType?: keyof typeof buttonStyles;
@@ -17,7 +16,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 
 export function Button({
   className,
-  color = 'default',
+  color = 'primary',
   styleType = 'solid',
   size = 'default',
   rounded = 'xl',
@@ -42,18 +41,18 @@ export function Button({
   return (
     <button
       type="button"
-      aria-label='button'
+      aria-label={typeof children === 'string' ? children : 'button'}
       aria-disabled={disabled || loading}
       className={buttonClasses}
       disabled={disabled || loading}
       {...props}
     >
       {loading && (
-        <BounceLoader color="white" size={20}  className='mr-2'/>
+        <BounceLoader color="white" size={20} className="mr-2" />
       )}
-      {leftIcon && !loading && <span className="mr-2">{leftIcon}</span>}
+      {!loading && leftIcon && <span className="mr-2">{leftIcon}</span>}
       {children}
-      {rightIcon && <span className="ml-2">{rightIcon}</span>}
+      {!loading && rightIcon && <span className="ml-2">{rightIcon}</span>}
     </button>
   );
 }

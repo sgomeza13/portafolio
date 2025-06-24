@@ -24,7 +24,7 @@ export interface CardProps {
 function CardHeader({ children, className, hasBorder, ...props }: CardProps) {
   return (
     <>
-    <div className={cn("card-header px-4 pt-4 pb-2", className)} {...props}>
+    <div className={cn("card-header px-4 pb-2", className)} {...props}>
       <div className="font-bold text-xl">{children}</div>
     </div>
     {hasBorder && <div className="border-b border-gray-200 dark:border-gray-700 -mx-4 mt-2" />}
@@ -67,9 +67,9 @@ function CardBody({ children, className, ...props }: CardProps) {
  */
 function CardFooter({ children, className, hasBorder, ...props }: CardProps) {
   return (
-    <div className={cn("card-footer", className)} {...props}>
+    <div {...props}>
       {hasBorder && <div className="border-t border-gray-200 dark:border-gray-700 -mx-4 mb-2" />}
-      <div className="flex justify-end px-4 pt-4">
+      <div  className={cn("card-footer", className)}>
         {children}
       </div>
     </div>
