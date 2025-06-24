@@ -23,7 +23,7 @@ export default function Home() {
           </h1>
 
           <TypewriterText
-            speed={70}
+            speed={40}
             className="pt-4 text-lg sm:text-xl lg:text-2xl leading-relaxed text-foreground-muted max-w-3xl mx-auto"
           >
             <h2 className="">{t("title")}</h2>
@@ -32,10 +32,10 @@ export default function Home() {
 
         <div className="flex flex-row gap-4 justify-center pt-6">
           <Button color="success" rightIcon={<FaEye size={20} />}>
-            See Projects
+            {t("project_button_label")}
           </Button>
           <Button color="accent" rightIcon={<CiMail size={20} />}>
-            Contact me
+            {t("contact_button_label")}
           </Button>
         </div>
 
@@ -44,7 +44,7 @@ export default function Home() {
           <Card className="gradient-glass border-gray-800 hover:glow-primary transition-all duration-300 max-w-4xl mx-auto">
             <CardHeader
               hasBorder
-              className="text-primary-400 text-xl font-semibold pb-4"
+              className="text-white text-xl font-semibold pb-4"
             >
               {t("stack")}
             </CardHeader>

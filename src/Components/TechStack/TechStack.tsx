@@ -7,7 +7,7 @@ export default function TechStack() {
     <div className="space-y-8">
       {/* Languages Section */}
       <div className="space-y-4">
-        <h3 className="text-lg font-bold text-secondary-400 font-heading">
+        <h3 className="text-lg font-bold text-primary-400 font-heading">
           {t("languages")}
         </h3>
         <div className="flex flex-wrap justify-center gap-4">

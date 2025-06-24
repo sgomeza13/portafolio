@@ -2,7 +2,9 @@
     "title": "Portafolio de Simón",
     "home": {
         "title": "Ingeniero de software construyendo aplicaciones escalables y de alto rendimiento. Ingeniando soluciones con precisión y pasión.",
-        "stack": "Tecnologías"
+        "stack": "Tecnologías",
+        "project_button_label": "Ver Proyectos",
+        "contact_button_label": "Contacto"
     },
     "techStack": {
         "languages": "Lenguajes",
