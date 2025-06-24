@@ -1,7 +1,12 @@
 {   
     "title": "Portafolio de Simón",
-    "home":{
-        "title": "Desarrollador fullstack creando experiencias web modernas con un amor por el código limpio, diseño rico y un toque de naturaleza."
-
+    "home": {
+        "title": "Ingeniero de software construyendo aplicaciones escalables y de alto rendimiento. Ingeniando soluciones con precisión y pasión.",
+        "stack": "Tecnologías"
+    },
+    "techStack": {
+        "languages": "Lenguajes",
+        "frameworks": "Frameworks y Librerías",
+        "tools": "Herramientas"
     }
 }

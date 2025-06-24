@@ -1,7 +1,7 @@
 "use client";
 
 import { Link, useRoute } from "next-globe-gen";
-import { Button } from "../CustomUI/Button/Button";
+import { SpainFlag, UKFlag } from "../SVG/UnitedKingdom";
 
 /**
  * If there is dynamic route segments in some of the application routes (i.e. "/images/[id]"),
@@ -10,24 +10,26 @@ import { Button } from "../CustomUI/Button/Button";
  */
 export default function LanguageSwitcher() {
   const route = useRoute();
+
   return (
     <nav>
-      <ul className="flex flex-row gap-4">
+      <ul className="flex flex-row gap-4 w-full items-center">
+        
         <li>
-          <Button>
-          <Link href={route} locale="en">
-            English 🇬🇧
+          <Link href={route} locale="en" className="flex items-center gap-2">
+            <UKFlag className="w-5 h-auto flex-shrink-0 align-middle" />
           </Link>
-         </Button> 
         </li>
+
         <li>
-          <Button>
-          <Link href={route} locale="es">
-            Español 🇪🇸
+          <Link href={route} locale="es" className="flex items-center gap-2">
+            <SpainFlag className="w-5 h-auto flex-shrink-0 align-middle" />
           </Link>
-          </Button>
         </li>
+
       </ul>
     </nav>
   );
 }
+
+
