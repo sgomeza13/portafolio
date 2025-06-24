@@ -14,11 +14,12 @@ export default function TechStack() {
           {techStack.languages.map((tech) => (
             <div
               key={tech.name}
-              className="group flex flex-col items-center space-y-2 p-3 rounded-lg bg-glass-light hover:bg-glass-sage hover:scale-105 transition-all duration-300 cursor-pointer min-w-[70px]"            >
-              <div className="text-2xl group-hover:scale-110 transition-transform duration-300">
+              className="group flex flex-col items-center space-y-2 p-2 sm:p-3 rounded-lg bg-glass-light hover:bg-glass-sage hover:scale-105 transition-all duration-300 cursor-pointer min-w-[60px]"
+            >
+              <div className="text-xl sm:text-2xl group-hover:scale-110 transition-transform duration-300">
                 {tech.icon}
               </div>
-              <span className="text-foreground-muted group-hover:text-primary-400 group-hover:scale-105 text-xs font-medium transition-all text-center">
+              <span className="text-[10px] sm:text-xs text-foreground-muted group-hover:text-primary-400 group-hover:scale-105 font-medium transition-all text-center">
                 {tech.name}
               </span>
             </div>
@@ -35,12 +36,12 @@ export default function TechStack() {
           {techStack.frameworks.map((tech) => (
             <div
               key={tech.name}
-              className="group flex flex-col items-center space-y-2 p-3 rounded-lg bg-glass-light hover:bg-glass-medium hover:scale-105 transition-all duration-300 cursor-pointer min-w-[70px]"
+              className="group flex flex-col items-center space-y-2 p-2 sm:p-3 rounded-lg bg-glass-light hover:bg-glass-sage hover:scale-105 transition-all duration-300 cursor-pointer min-w-[60px]"
             >
-              <div className="text-2xl group-hover:scale-110 transition-transform duration-300">
+              <div className="text-xl sm:text-2xl group-hover:scale-110 transition-transform duration-300">
                 {tech.icon}
               </div>
-              <span className="text-foreground-muted group-hover:text-secondary-400 text-xs font-medium transition-colors text-center">
+              <span className="text-[10px] sm:text-xs text-foreground-muted group-hover:text-primary-400 group-hover:scale-105 font-medium transition-all text-center">
                 {tech.name}
               </span>
             </div>
@@ -57,12 +58,12 @@ export default function TechStack() {
           {techStack.tools.map((tech) => (
             <div
               key={tech.name}
-              className="group flex flex-col items-center space-y-2 p-3 rounded-lg bg-glass-light hover:bg-glass-medium hover:scale-105 transition-all duration-300 cursor-pointer min-w-[70px]"
+              className="group flex flex-col items-center space-y-2 p-2 sm:p-3 rounded-lg bg-glass-light hover:bg-glass-sage hover:scale-105 transition-all duration-300 cursor-pointer min-w-[60px]"
             >
-              <div className="text-2xl group-hover:scale-110 transition-transform duration-300">
+              <div className="text-xl sm:text-2xl group-hover:scale-110 transition-transform duration-300">
                 {tech.icon}
               </div>
-              <span className="text-foreground-muted group-hover:text-accent-400 text-xs font-medium transition-colors text-center">
+              <span className="text-[10px] sm:text-xs text-foreground-muted group-hover:text-primary-400 group-hover:scale-105 font-medium transition-all text-center">
                 {tech.name}
               </span>
             </div>

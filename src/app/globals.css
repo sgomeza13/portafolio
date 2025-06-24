@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 :root {
+  --viewport-height: 100vh;
   /* Modern Dark Base */
   --background: #0a0a0f;
   --background-secondary: #111118;
@@ -54,6 +55,12 @@
   /* Typography */
   --font-heading: "Clash Display", sans-serif;
   --font-body: "Inter", sans-serif;
+}
+
+@supports (height: 100dvh) {
+  :root {
+    --viewport-height: 100dvh;
+  }
 }
 
 @theme inline {
