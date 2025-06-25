@@ -27,7 +27,7 @@ function CardHeader({ children, className, hasBorder, ...props }: CardProps) {
     <div className={cn("card-header px-4 pb-2", className)} {...props}>
       <div className="font-bold text-xl">{children}</div>
     </div>
-    {hasBorder && <div className="border-b border-gray-200 dark:border-gray-700 -mx-4 mt-2" />}
+    {hasBorder && <div className="border-b border-t border-border -mx-4 mt-2" />}
     </>
   );
 }
@@ -68,7 +68,7 @@ function CardBody({ children, className, ...props }: CardProps) {
 function CardFooter({ children, className, hasBorder, ...props }: CardProps) {
   return (
     <div {...props}>
-      {hasBorder && <div className="border-t border-gray-200 dark:border-gray-700 -mx-4 mb-2" />}
+      {hasBorder && <div className="border-t border-border -mx-4 mb-2" />}
       <div  className={cn("card-footer", className)}>
         {children}
       </div>
@@ -100,7 +100,7 @@ function Card({ children, header, footer, className, hasBorder, ...props }: Card
     <div
       className={cn(
         "card rounded-xl overflow-hidden",
-        hasBorder && "border border-gray-200 dark:border-gray-700",
+        hasBorder && "border border-border",
         className
       )}
       {...props}
