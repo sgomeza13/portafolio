@@ -14,7 +14,7 @@ export default function ProjectsLayout({
 }) {
   const t = useTranslations("breadCrumbs");
   return (
-    <div className="flex flex-col max-w-7xl mx-auto w-full ">
+    <div className="flex flex-col w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="mb-4 sm:mb-6">
         <Breadcrumb>
           <BreadcrumbList>
@@ -28,7 +28,6 @@ export default function ProjectsLayout({
           </BreadcrumbList>
         </Breadcrumb>
       </div>
-
       <main>{children}</main>
     </div>
   );

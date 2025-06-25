@@ -24,7 +24,7 @@ export interface CardProps {
 function CardHeader({ children, className, hasBorder, ...props }: CardProps) {
   return (
     <>
-    <div className={cn("card-header px-4 pb-2", className)} {...props}>
+    <div className={cn("card-header px-4 py-4", className)} {...props}>
       <div className="font-bold text-xl">{children}</div>
     </div>
     {hasBorder && <div className="border-b border-t border-border -mx-4 mt-2" />}
@@ -95,7 +95,7 @@ function CardFooter({ children, className, hasBorder, ...props }: CardProps) {
  * @param props.hasBorder - Whether to render a border around the card.
  * @param props...otherProps - Any other props will be spread to the outermost `div` element.
  */
-function Card({ children, header, footer, className, hasBorder, ...props }: CardProps) {
+function Card({ children, className, hasBorder, ...props }: CardProps) {
   return (
     <div
       className={cn(
@@ -105,11 +105,10 @@ function Card({ children, header, footer, className, hasBorder, ...props }: Card
       )}
       {...props}
     >
-      {header && <CardHeader>{header}</CardHeader>}
-      <CardBody>{children}</CardBody>
-      {footer && <CardFooter>{footer}</CardFooter>}
+      {children}
     </div>
   );
 }
+
 
 export { Card, CardHeader, CardFooter, CardBody };
