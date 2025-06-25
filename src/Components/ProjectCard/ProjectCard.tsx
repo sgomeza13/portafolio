@@ -1,9 +1,7 @@
-"use client";
-import Image from "next/image";
-import { useState } from "react";
 import { cn } from "@/lib/util";
 import { Card, CardFooter, CardHeader } from "../CustomUI/Card/Card";
 import { Chip } from "../CustomUI/Chip/Chip";
+import { ImageWithFallback } from "../CustomUI/Image/ImageWithFallback";
 
 interface ProjectCardProps {
   title: string;
@@ -17,14 +15,13 @@ interface ProjectCardProps {
 export default function ProjectCard({
   title,
   description,
-  imageUrl,
+  imageUrl="",
   videoUrl,
   tags = [],
   className,
 }: ProjectCardProps) {
 
   const fallbackImage = "/images/fallback.png";
-  const [currentImage, setCurrentImage] = useState(imageUrl || fallbackImage);
 
   return (
     <Card
@@ -45,12 +42,12 @@ export default function ProjectCard({
           {videoUrl && !imageUrl ? (
             <video src={videoUrl} controls className="w-full h-full object-cover" />
           ) : (
-            <Image
-              src={currentImage}
+            <ImageWithFallback
+              src={imageUrl}
+              fallbackSrc={fallbackImage}
               alt={title}
               fill
               className="object-cover"
-              onError={() => setCurrentImage(fallbackImage)}
             />
           )}
         </div>
