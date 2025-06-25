@@ -10,5 +10,9 @@
         "languages": "Languages",
         "frameworks": "Frameworks & Libraries",
         "tools": "Tools"
+    },
+    "breadCrumbs": {
+        "home": "Home",
+        "projects": "Projects"
     }
 }
