@@ -1,7 +1,7 @@
 "use client";
 
 import { Link, useRoute } from "next-globe-gen";
-import { SpainFlag, UKFlag } from "../SVG/UnitedKingdom";
+import { SpainFlag, UKFlag } from "../SVG/Flags";
 
 /**
  * If there is dynamic route segments in some of the application routes (i.e. "/images/[id]"),
