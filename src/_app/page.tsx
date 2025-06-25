@@ -30,7 +30,7 @@ export default function Home() {
 
         {/* Botones */}
         <div className="flex flex-wrap justify-center gap-4 pt-4">
-          <Button color="success" rightIcon={<FaEye size={18} />}>
+          <Button color="success" rightIcon={<FaEye size={18} />} href="/projects">
             {t("project_button_label")}
           </Button>
           <Button color="accent" rightIcon={<CiMail size={18} />}>
