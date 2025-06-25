@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { cn } from "@/lib/util";
 import { Card, CardFooter, CardHeader } from "../CustomUI/Card/Card";
+import { Chip } from "../CustomUI/Chip/Chip";
 
 interface ProjectCardProps {
   title: string;
@@ -66,12 +67,7 @@ export default function ProjectCard({
         <CardFooter className="px-4 pb-4">
           <div className="flex flex-wrap gap-2">
             {tags.map((tag, idx) => (
-              <span
-                key={idx}
-                className="px-2 text-sm rounded-full bg-glass-sage text-[var(--primary-400)] border border-[var(--primary-600)]"
-              >
-                {tag}
-              </span>
+              <Chip key={idx} tag={tag} color="primary"/>
             ))}
           </div>
         </CardFooter>
