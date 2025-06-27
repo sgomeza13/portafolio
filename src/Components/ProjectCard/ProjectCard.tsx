@@ -2,6 +2,7 @@ import { cn } from "@/lib/util";
 import { Card, CardFooter, CardHeader } from "../CustomUI/Card/Card";
 import { Chip } from "../CustomUI/Chip/Chip";
 import { ImageWithFallback } from "../CustomUI/Image/ImageWithFallback";
+import Link from 'next/link'
 
 interface ProjectCardProps {
   title: string;
@@ -10,6 +11,7 @@ interface ProjectCardProps {
   videoUrl?: string;
   tags?: string[];
   className?: string;
+  id?: number;
 }
 
 export default function ProjectCard({
@@ -19,15 +21,18 @@ export default function ProjectCard({
   videoUrl,
   tags = [],
   className,
+  id
 }: ProjectCardProps) {
 
   const fallbackImage = "/images/fallback.png";
 
   return (
+    <Link href={`projects/${id}`} className="block h-full">
     <Card
+      isClickable
       hasBorder
       className={cn(
-        "bg-glass-medium glow-primary hover:scale-[1.02] transition-transform duration-300 flex flex-col h-full",
+        "bg-glass-medium glow-primary flex flex-col h-full",
         className
       )}
     >
@@ -70,5 +75,6 @@ export default function ProjectCard({
         </CardFooter>
       )}
     </Card>
+    </Link>
   );
 }

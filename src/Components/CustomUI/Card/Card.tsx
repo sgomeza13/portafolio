@@ -6,6 +6,7 @@ export interface CardProps {
   hasBorder?: boolean;
   header?: React.ReactNode;
   footer?: React.ReactNode;
+  isClickable?: boolean;
 }
 
 /**
@@ -95,14 +96,16 @@ function CardFooter({ children, className, hasBorder, ...props }: CardProps) {
  * @param props.hasBorder - Whether to render a border around the card.
  * @param props...otherProps - Any other props will be spread to the outermost `div` element.
  */
-function Card({ children, className, hasBorder, ...props }: CardProps) {
+function Card({ children, className, hasBorder, isClickable, ...props }: CardProps) {
   return (
     <div
       className={cn(
         "card rounded-xl overflow-hidden",
         hasBorder && "border border-border",
+        isClickable && "cursor-pointer hover:scale-105 transition-all duration-300 active:scale-[0.98]",
         className
       )}
+      role={isClickable ? "button" : undefined}
       {...props}
     >
       {children}
