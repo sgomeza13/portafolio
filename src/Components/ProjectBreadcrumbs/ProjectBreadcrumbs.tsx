@@ -8,12 +8,13 @@ import {
 import { getTranslations } from "next-globe-gen";
 
 interface ProjectsBreadcrumbProps {
-  lang: string;
   projectId?: string;
+  projectTitle?: string;
 }
 
 export default async function ProjectsBreadcrumb({
   projectId,
+  projectTitle,
 }: ProjectsBreadcrumbProps) {
   const t = getTranslations("breadCrumbs");
 
@@ -21,18 +22,18 @@ export default async function ProjectsBreadcrumb({
     <Breadcrumb>
       <BreadcrumbList>
         <BreadcrumbItem>
-          <BreadcrumbLink href='/'>{t("home")}</BreadcrumbLink>
+          <BreadcrumbLink href="/">{t("home")}</BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
-          <BreadcrumbLink href='/projects'>{t("projects")}</BreadcrumbLink>
+          <BreadcrumbLink href="/projects">{t("projects")}</BreadcrumbLink>
         </BreadcrumbItem>
         {projectId && (
           <>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
               <BreadcrumbLink href={`/projects/${projectId}`}>
-                {projectId}
+                {projectTitle ?? projectId}
               </BreadcrumbLink>
             </BreadcrumbItem>
           </>

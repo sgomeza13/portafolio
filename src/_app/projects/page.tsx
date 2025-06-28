@@ -10,11 +10,11 @@ import {
   PaginationPrevious,
 } from "@/Components/UI/pagination";
 
-export default function ProjectsGrid({ params }: { params: { lang: string } }) {
+export default function ProjectsGrid() {
   return (
     <div className="relative min-h-[80vh] pb-20">
       <div className="mb-4 sm:mb-6">
-        <ProjectsBreadcrumb lang={params.lang} />
+        <ProjectsBreadcrumb />
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {projects.map((project, idx) => (
