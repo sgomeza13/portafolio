@@ -6,6 +6,7 @@ export interface CardProps {
   hasBorder?: boolean;
   header?: React.ReactNode;
   footer?: React.ReactNode;
+  isClickable?: boolean;
 }
 
 /**
@@ -24,10 +25,10 @@ export interface CardProps {
 function CardHeader({ children, className, hasBorder, ...props }: CardProps) {
   return (
     <>
-    <div className={cn("card-header px-4 pt-4 pb-2", className)} {...props}>
+    <div className={cn("card-header px-4 py-4", className)} {...props}>
       <div className="font-bold text-xl">{children}</div>
     </div>
-    {hasBorder && <div className="border-b border-gray-200 dark:border-gray-700 -mx-4 mt-2" />}
+    {hasBorder && <div className="border-b border-t border-border -mx-4 mt-2" />}
     </>
   );
 }
@@ -67,9 +68,9 @@ function CardBody({ children, className, ...props }: CardProps) {
  */
 function CardFooter({ children, className, hasBorder, ...props }: CardProps) {
   return (
-    <div className={cn("card-footer", className)} {...props}>
-      {hasBorder && <div className="border-t border-gray-200 dark:border-gray-700 -mx-4 mb-2" />}
-      <div className="flex justify-end px-4 pt-4">
+    <div {...props}>
+      {hasBorder && <div className="border-t border-border -mx-4 mb-2" />}
+      <div  className={cn("card-footer", className)}>
         {children}
       </div>
     </div>
@@ -95,21 +96,22 @@ function CardFooter({ children, className, hasBorder, ...props }: CardProps) {
  * @param props.hasBorder - Whether to render a border around the card.
  * @param props...otherProps - Any other props will be spread to the outermost `div` element.
  */
-function Card({ children, header, footer, className, hasBorder, ...props }: CardProps) {
+function Card({ children, className, hasBorder, isClickable, ...props }: CardProps) {
   return (
     <div
       className={cn(
         "card rounded-xl overflow-hidden",
-        hasBorder && "border border-gray-200 dark:border-gray-700",
+        hasBorder && "border border-border",
+        isClickable && "cursor-pointer hover:scale-105 transition-all duration-300 active:scale-[0.98]",
         className
       )}
+      role={isClickable ? "button" : undefined}
       {...props}
     >
-      {header && <CardHeader>{header}</CardHeader>}
-      <CardBody>{children}</CardBody>
-      {footer && <CardFooter>{footer}</CardFooter>}
+      {children}
     </div>
   );
 }
+
 
 export { Card, CardHeader, CardFooter, CardBody };

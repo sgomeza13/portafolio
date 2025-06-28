@@ -1,7 +1,18 @@
 {   
     "title": "Simon's Portfolio",
     "home":{
-        "title": "Fullstack developer crafting modern web experiences with a love for clean code, rich design, and a touch of nature."
-
+        "title": "Software engineer building performant, scalable applications. Engineering solutions with precision and passion.",
+        "stack": "Tech Stack",
+        "project_button_label": "See Projects",
+        "contact_button_label": "Contact Me"
+    },
+    "techStack": {
+        "languages": "Languages",
+        "frameworks": "Frameworks & Libraries",
+        "tools": "Tools"
+    },
+    "breadCrumbs": {
+        "home": "Home",
+        "projects": "Projects"
     }
 }
