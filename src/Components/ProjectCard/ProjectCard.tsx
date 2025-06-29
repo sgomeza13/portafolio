@@ -2,7 +2,6 @@ import { cn } from "@/lib/util";
 import { Card, CardFooter, CardHeader } from "../CustomUI/Card/Card";
 import { ImageWithFallback } from "../CustomUI/Image/ImageWithFallback";
 import Link from "next/link";
-import { log } from "console";
 import { RenderTags } from "../RenderTags/RenderTags";
 
 interface Tag {
@@ -29,7 +28,7 @@ export default function ProjectCard({
   project_id,
 }: ProjectCardProps) {
   const fallbackImage = "/images/fallback.png";
-  log(preview_image_url);
+
   return (
     <Link href={`projects/${project_id}`} className="block h-full">
       <Card

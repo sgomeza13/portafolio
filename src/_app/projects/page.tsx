@@ -9,13 +9,11 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/Components/UI/pagination";
-import { log } from "console";
 import { getLocale } from "next-globe-gen";
 
 export default async function ProjectsGrid() {
   const locale = getLocale();
   const projectsFetched = await fetchPublicProjectsGrid(locale);
-  log("Projects fetched:", projectsFetched);
   return (
     <div className="relative min-h-[80vh] pb-20">
       <div className="mb-4 sm:mb-6">

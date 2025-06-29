@@ -2,7 +2,7 @@ import { fetchPublicProjects } from "@/api/fetchPublicProjects";
 import ProjectsBreadcrumb from "@/Components/ProjectBreadcrumbs/ProjectBreadcrumbs";
 import { RenderTags } from "@/Components/RenderTags/RenderTags";
 import { getEmbedUrl } from "@/lib/getEmbedUrl";
-import { getLocale } from "next-globe-gen";
+import { getLocale, getTranslations } from "next-globe-gen";
 
 
 export default async function ProjectDetailsPage({
@@ -11,12 +11,13 @@ export default async function ProjectDetailsPage({
   params: { id: string };
 }) {
   const locale = getLocale();
+  const t = getTranslations("project");
   const project = await fetchPublicProjects(locale, params.id);
   console.log(project)
   if (!project) {
     return (
       <main className="max-w-3xl mx-auto py-10">
-        <h1 className="text-3xl font-bold mb-4">Project Not Found</h1>
+        <h1 className="text-3xl font-bold mb-4">{t('not_found')}</h1>
       </main>
     );
   }
@@ -60,7 +61,7 @@ export default async function ProjectDetailsPage({
         {/* Reference Links */}
         {project.reference_urls?.length > 0 && (
           <div className="mt-8">
-            <h2 className="text-lg font-semibold mb-2">Check the project source code:</h2>
+            <h2 className="text-lg font-semibold mb-2">{t("check_source_code")}</h2>
             <ul className="list-disc list-inside space-y-1">
               {project.reference_urls.map((url) => (
                 <li key={url}>
