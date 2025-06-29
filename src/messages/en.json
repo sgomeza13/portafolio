@@ -4,7 +4,9 @@
         "title": "Software engineer building performant, scalable applications. Engineering solutions with precision and passion.",
         "stack": "Tech Stack",
         "project_button_label": "See Projects",
-        "contact_button_label": "Contact Me"
+        "contact_button_label": "Contact Me",
+        "contact_title": "Contact",
+        "contact_subtitle": "Professional inquiries only"
     },
     "techStack": {
         "languages": "Languages",

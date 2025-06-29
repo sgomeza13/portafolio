@@ -4,7 +4,9 @@
         "title": "Ingeniero de software construyendo aplicaciones escalables y de alto rendimiento. Ingeniando soluciones con precisión y pasión.",
         "stack": "Tecnologías",
         "project_button_label": "Ver Proyectos",
-        "contact_button_label": "Contacto"
+        "contact_button_label": "Contactame",
+        "contact_title": "Contacto",
+        "contact_subtitle": "Solo consultas profesionales"
     },
     "techStack": {
         "languages": "Lenguajes",
