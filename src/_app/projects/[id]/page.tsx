@@ -13,7 +13,7 @@ export default async function ProjectDetailsPage({
   const locale = getLocale();
   const t = getTranslations("project");
   const project = await fetchPublicProjects(locale, params.id);
-  console.log(project)
+
   if (!project) {
     return (
       <main className="max-w-3xl mx-auto py-10">
