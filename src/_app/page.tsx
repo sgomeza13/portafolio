@@ -1,9 +1,9 @@
+import { ContactButton } from "@/Components/ContactButton/ContactButton";
 import { Button } from "@/Components/CustomUI/Button/Button";
 import { Card, CardBody, CardHeader } from "@/Components/CustomUI/Card/Card";
 import TechStack from "@/Components/TechStack/TechStack";
 import TypewriterText from "@/Components/TypeWritterEffect/TypeWritterText";
 import { useTranslations } from "next-globe-gen";
-import { CiMail } from "react-icons/ci";
 import { FaEye } from "react-icons/fa";
 
 export default function Home() {
@@ -33,9 +33,7 @@ export default function Home() {
           <Button color="success" rightIcon={<FaEye size={18} />} href="/projects">
             {t("project_button_label")}
           </Button>
-          <Button color="accent" rightIcon={<CiMail size={18} />}>
-            {t("contact_button_label")}
-          </Button>
+          <ContactButton />
         </div>
 
         {/* Tech Stack */}
