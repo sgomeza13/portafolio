@@ -1,9 +1,9 @@
 import { cn } from "@/lib/util";
 import { Card, CardFooter, CardHeader } from "../CustomUI/Card/Card";
-import { Chip } from "../CustomUI/Chip/Chip";
 import { ImageWithFallback } from "../CustomUI/Image/ImageWithFallback";
 import Link from "next/link";
 import { log } from "console";
+import { RenderTags } from "../RenderTags/RenderTags";
 
 interface Tag {
   label: string;
@@ -67,9 +67,7 @@ export default function ProjectCard({
         {tags.length > 0 && (
           <CardFooter className="px-4 pb-4">
             <div className="flex flex-wrap gap-2">
-              {tags.map((tag, project_idx) => (
-                <Chip key={project_idx} tag={tag?.label} color="primary" />
-              ))}
+            <RenderTags tags={tags} />
             </div>
           </CardFooter>
         )}
