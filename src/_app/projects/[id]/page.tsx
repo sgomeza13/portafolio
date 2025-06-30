@@ -1,9 +1,9 @@
 import { fetchPublicProjects } from "@/api/fetchPublicProjects";
 import ProjectsBreadcrumb from "@/Components/ProjectBreadcrumbs/ProjectBreadcrumbs";
+import { ProjectCarouselImages } from "@/Components/ProjectCarouselImages/ProjectCarouselImages";
 import { RenderTags } from "@/Components/RenderTags/RenderTags";
 import { getEmbedUrl } from "@/lib/getEmbedUrl";
 import { getLocale, getTranslations } from "next-globe-gen";
-
 
 export default async function ProjectDetailsPage({
   params,
@@ -17,7 +17,7 @@ export default async function ProjectDetailsPage({
   if (!project) {
     return (
       <main className="max-w-3xl mx-auto py-10">
-        <h1 className="text-3xl font-bold mb-4">{t('not_found')}</h1>
+        <h1 className="text-3xl font-bold mb-4">{t("not_found")}</h1>
       </main>
     );
   }
@@ -25,11 +25,9 @@ export default async function ProjectDetailsPage({
   return (
     <>
       <div className="mb-4 sm:mb-6">
-        <ProjectsBreadcrumb
-          projectId={params.id}
-          projectTitle={project.name}
-        />
+        <ProjectsBreadcrumb projectId={params.id} projectTitle={project.name} />
       </div>
+
       <main className="max-w-3xl mx-auto py-10">
         <h1 className="text-3xl font-bold mb-4">{project.name}</h1>
 
@@ -49,8 +47,13 @@ export default async function ProjectDetailsPage({
         )}
 
         {/* Description */}
-        <p className="mb-6 text-lg text-gray-300">{project.extended_description}</p>
+        <p className="mb-6 text-lg text-gray-300">
+          {project.extended_description}
+        </p>
 
+        {/* Full-width Carousel */}
+        <ProjectCarouselImages imageUrls={project.image_urls} />
+        
         {/* Tags */}
         {project.tags?.length > 0 && (
           <div className="flex flex-wrap gap-2 mb-6">
@@ -61,7 +64,9 @@ export default async function ProjectDetailsPage({
         {/* Reference Links */}
         {project.reference_urls?.length > 0 && (
           <div className="mt-8">
-            <h2 className="text-lg font-semibold mb-2">{t("check_source_code")}</h2>
+            <h2 className="text-lg font-semibold mb-2">
+              {t("check_source_code")}
+            </h2>
             <ul className="list-disc list-inside space-y-1">
               {project.reference_urls.map((url) => (
                 <li key={url}>

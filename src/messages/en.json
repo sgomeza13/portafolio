@@ -19,6 +19,9 @@
     },
     "project": {
         "not_found": "Project not found",
-        "check_source_code": "Check the project's source code on GitHub"
+        "check_source_code": "Check the project's source code on GitHub",
+        "project_images": "Project Images",
+        "current_image": "Image {current} of {total}"
+
     }
 }
