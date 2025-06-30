@@ -16,5 +16,12 @@
         "breadCrumbs": {
         "home": "Inicio",
         "projects": "Proyectos"
+    },
+    "project": {
+        "not_found": "Proyecto no encontrado",
+        "check_source_code": "Consulta el código fuente del proyecto en GitHub",
+        "project_images": "Imágenes del Proyecto",
+        "current_image": "Imagen {current} de {total}"
+
     }
 }

@@ -1,5 +1,5 @@
+import { fetchPublicProjectsGrid } from "@/api/fetchPublicProjects";
 import ProjectsBreadcrumb from "@/Components/ProjectBreadcrumbs/ProjectBreadcrumbs";
-import { projects } from "@/Components/ProjectCard/Constants";
 import ProjectCard from "@/Components/ProjectCard/ProjectCard";
 import {
   Pagination,
@@ -9,15 +9,18 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/Components/UI/pagination";
+import { getLocale } from "next-globe-gen";
 
-export default function ProjectsGrid() {
+export default async function ProjectsGrid() {
+  const locale = getLocale();
+  const projectsFetched = await fetchPublicProjectsGrid(locale);
   return (
     <div className="relative min-h-[80vh] pb-20">
       <div className="mb-4 sm:mb-6">
         <ProjectsBreadcrumb />
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {projects.map((project, idx) => (
+        {projectsFetched.map((project, idx) => (
           <ProjectCard className="h-full" key={idx} {...project} />
         ))}
       </div>
