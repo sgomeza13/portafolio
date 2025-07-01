@@ -4,6 +4,7 @@ import { ProjectCarouselImages } from "@/Components/ProjectCarouselImages/Projec
 import { RenderTags } from "@/Components/RenderTags/RenderTags";
 import { getEmbedUrl } from "@/lib/getEmbedUrl";
 import { getLocale, getTranslations } from "next-globe-gen";
+export const dynamic = "force-dynamic";
 
 export default async function ProjectDetailsPage({
   params,
