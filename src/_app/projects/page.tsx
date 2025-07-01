@@ -10,6 +10,7 @@ import {
   PaginationPrevious,
 } from "@/Components/UI/pagination";
 import { getLocale } from "next-globe-gen";
+export const dynamic = "force-dynamic";
 
 export default async function ProjectsGrid() {
   const locale = getLocale();
